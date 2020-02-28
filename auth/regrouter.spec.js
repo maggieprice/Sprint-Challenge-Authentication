@@ -13,11 +13,10 @@ const server = require("../api/server.js");
   });
 
   describe("register without password", function() {
-    it('should return json', function(){
+    it('should not register user', function(){
         return request(server)
         .post('/api/auth/register')
         .send({ username: 'maggie2'})
         .expect(500)
-        .expect('Content-Type', /json/);
     });
 });

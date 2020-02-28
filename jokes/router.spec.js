@@ -9,12 +9,12 @@ describe("jokes router", function() {
     });
 
     describe("GET /api/jokes", function() {
-        it('should return 200 OK', function(){
+        it('should return 401', function(){
             return request(server)
             .get('/api/jokes')
-            .then(res => {
-                expect(res.status).toBe(200)
-            });
+            .expect(400)
+            .expect('Content-Type', /json/);
+            
         });
   });
 });
