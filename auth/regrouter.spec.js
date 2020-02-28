@@ -2,18 +2,12 @@ const request = require("supertest");
 
 const server = require("../api/server.js");
 
-// describe("login test", function() {
-//     it("should run the tests", function() {
-//       expect(true).toBe(true);
-//     });
 
-    describe("login", function() {
+    describe("register", function() {
         it('should return json', function(){
             return request(server)
-            .post('/api/auth/login')
-            .send({ username: 'maggie', password: 'test'})
-            .expect(200)
+            .post('/api/auth/register')
+            .send({ username: 'maggie1', password: 'test1'})
             .expect('Content-Type', /json/);
         });
   });
-// });
